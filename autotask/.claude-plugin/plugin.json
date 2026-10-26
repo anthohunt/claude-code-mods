@@ -1,0 +1,36 @@
+{
+  "name": "autotask-v2",
+  "version": "2.0.0",
+  "description": "Autotask v2 : une mission (mission.json strict) avec critères d'arrêt, réveil construit par le code aux minutes prévues (heure de Paris), monitoring et surveillance par scripts OK/KO, format de réponse imposé et vérifié par le code, reprises bornées. Aucun modèle juge.",
+  "author": {
+    "name": "Anthony Hunt"
+  },
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "racine": {
+      "type": "string",
+      "title": "Dossier des missions",
+      "description": "Chaque mission dans <racine>/<slug>/mission.json (+ etat.json, passages.jsonl, STOP). « ~ » = dossier personnel.",
+      "default": "~/autotask"
+    },
+    "delaiControle": {
+      "type": "string",
+      "title": "Délai d'un script de contrôle (s)",
+      "description": "Au-delà, le script compte KO (« délai dépassé »). Entre 5 et 600.",
+      "default": "120"
+    },
+    "reprisesMax": {
+      "type": "string",
+      "title": "Reprises d'affilée par passage",
+      "description": "Au plus ce nombre de messages de reprise par passage ; ensuite le mod attend le passage suivant. Entre 0 et 20.",
+      "default": "5"
+    },
+    "shell": {
+      "type": "string",
+      "title": "Shell des scripts de contrôle",
+      "description": "Exécutable qui lance les scripts (bash -c). Sur Windows : le bash de Git, ex. C:/Program Files/Git/bin/bash.exe.",
+      "default": "bash"
+    }
+  },
+  "license": "Apache-2.0"
+}

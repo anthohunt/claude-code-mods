@@ -1,0 +1,18 @@
+{
+  "name": "taches-autonomes",
+  "version": "0.1.0",
+  "description": "Tableau de bord des taches autonomes : panneau, boutons Lancer/Arreter, notifications",
+  "author": {
+    "name": "Anthony Hunt"
+  },
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "registre": {
+      "type": "string",
+      "title": "Registre des tâches autonomes",
+      "description": "Dossier des fiches (une fiche .md par tâche, format du skill add-autonomous-task). « ~ » = dossier personnel.",
+      "default": "~/.claude/autonomous-tasks"
+    }
+  },
+  "license": "Apache-2.0"
+}
