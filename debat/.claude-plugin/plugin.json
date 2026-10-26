@@ -1,0 +1,30 @@
+{
+  "name": "debat",
+  "version": "0.2.0",
+  "description": "Volet de discussion qui affiche en direct un débat cadré entre deux agents (POUR / CONTRE) : tu remplis la fiche, tu lances, tu suis le fil.",
+  "author": {
+    "name": "Anthony Hunt"
+  },
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "hote": {
+      "type": "string",
+      "title": "Machine des débats (SSH)",
+      "description": "Adresse SSH (utilisateur@machine) où tournent les agents du débat. Vide = cette machine.",
+      "default": ""
+    },
+    "racine": {
+      "type": "string",
+      "title": "Dossier des débats",
+      "description": "Un sous-dossier par débat (cadre.md, debat.md, consignes). « ~ » = dossier personnel de la machine des débats.",
+      "default": "~/debats"
+    },
+    "lanceur": {
+      "type": "string",
+      "title": "Commande de lancement",
+      "description": "Commande qui crée un débat : lit la fiche JSON sur l'entrée standard, affiche une ligne « id <nom> ». Voir lancer-debat.py.",
+      "default": "python3 lancer-debat.py"
+    }
+  },
+  "license": "Apache-2.0"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "modes-reponse",
+  "version": "0.1.0",
+  "description": "Modes de reponse persistants : /tldr (reponses courtes) et /mode-simple (explications vulgarisees)",
+  "author": {
+    "name": "Anthony Hunt"
+  },
+  "license": "Apache-2.0"
+}

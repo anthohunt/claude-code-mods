@@ -1,0 +1,18 @@
+{
+  "name": "campagne",
+  "version": "1.0.0",
+  "description": "Mode manager de campagne : panneau de la campagne active (tâches, agents, questions pour l’utilisateur), bande au-dessus de la saisie, et passage manager obligatoire à cadence fixe, contrôlé par scripts (agents au travail, questions répondues, verdicts lus). /campagne",
+  "author": {
+    "name": "Anthony Hunt"
+  },
+  "userConfig": {
+    "racine": {
+      "type": "string",
+      "title": "Dossier des campagnes",
+      "description": "Chaque campagne dans <racine>/<slug>/campagne.json (+ releve.sh, controles/, questions.json, passages.jsonl).",
+      "default": "~/campagnes"
+    }
+  },
+  "types": "./types/index.d.ts",
+  "license": "Apache-2.0"
+}

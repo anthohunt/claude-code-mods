@@ -1,0 +1,9 @@
+{
+  "name": "vr",
+  "version": "0.1.0",
+  "description": "Mode VR : regles de travail Unity/Meta XR injectees dans chaque prompt (/vr), et multijoueur avec un Meta XR Operator par joueur (2/1/0 casques)",
+  "author": {
+    "name": "Anthony Hunt"
+  },
+  "license": "Apache-2.0"
+}
