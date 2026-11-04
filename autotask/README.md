@@ -1,5 +1,7 @@
 # autotask-v2
 
+> This document is in French.
+
 Mod Claude Code : une **mission** définie dans un fichier strict, réveillée par le code aux minutes prévues (heure de Paris), contrôlée par des **scripts OK/KO**, avec un **format de réponse imposé** que le code vérifie. Aucun modèle juge : tout se décide par scripts et comparaison de texte.
 
 ## Mission : `<racine>/<slug>/mission.json`
