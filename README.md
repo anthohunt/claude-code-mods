@@ -1,4 +1,4 @@
-# claude-code-mods — five small mods for Claude Code, plus a Meta XR mode
+# claude-code-mods — six small mods for Claude Code
 
 Mods are Claude Code extensions made of hooks (a command, a side panel, a band above the prompt, a text
 injected into every message). This repository holds six of them. Each one is a folder you can load on its own.
@@ -17,7 +17,7 @@ injected into every message). This repository holds six of them. Each one is a f
 
 ## Install
 
-Requirements: [Claude Code](https://docs.anthropic.com/en/docs/claude-code) (logged in), Node.js ≥ 18.
+Requirements: [Claude Code](https://code.claude.com/docs/en/overview) (logged in), Node.js ≥ 18.
 `bash` is needed by `autotask` and `campagne` (their control scripts); `debat` needs Python 3 and, only for a remote
 machine, SSH.
 
@@ -75,3 +75,7 @@ not need it.
   the `.claude-plugin/types/` folders that Claude Code generates itself belong to Anthropic and are not in this
   repository (`.gitignore`). `vr/skills/multijoueur/juge_deux_joueurs.py` uses [Pillow](https://python-pillow.org)
   (HPND licence); the Meta XR Simulator and Meta XR Operator are Meta products you install yourself.
+
+---
+
+**Anthony Hunt** · [Project page on ingevision.cloud](https://ingevision.cloud/?lang=en&p=outils-claude-code) · [LinkedIn](https://www.linkedin.com/in/anthony-hunt-3948a9196) · [GitHub profile](https://github.com/anthohunt)
