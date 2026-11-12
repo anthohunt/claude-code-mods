@@ -1,7 +1,7 @@
-# claude-code-mods — six small mods for Claude Code
+# claude-code-mods — eight small mods for Claude Code
 
 Mods are Claude Code extensions made of hooks (a command, a side panel, a band above the prompt, a text
-injected into every message). This repository holds six of them. Each one is a folder you can load on its own.
+injected into every message). This repository holds eight of them. Each one is a folder you can load on its own.
 
 > Claude Code mods are an **early-access** API and can change between versions. These mods were written
 > against Claude Code 2.1.x. The code comments and most user-facing strings are in French.
@@ -14,6 +14,8 @@ injected into every message). This repository holds six of them. Each one is a f
 | [`debat`](debat) | A side panel that follows, live, a framed debate between two agents (FOR / AGAINST), read from a folder. Includes the script that starts the debate. | `/debat` |
 | [`modes-reponse`](modes-reponse) | Two persistent answer modes: short answers (TL;DR) and plain-language explanations. | `/tldr`, `/mode-simple` |
 | [`vr`](vr) | A Unity / Meta XR work mode (rules injected into each message) and a multiplayer test skill with one Meta XR Operator per player. | `/vr on|off|status` |
+| [`verification-avant-remontee`](verification-avant-remontee/README.md) | **Check before reporting.** When a session announces a result (« c'est fait », « déployé », « ça marche » : the detection words are French), a fresh read-only agent that did none of the work checks every claim with its own tools. If it disputes one, the session is prompted to correct it and say so, right after the original answer. One check, at most one correction. | (automatic) |
+| [`decisions-communes`](decisions-communes/README.md) | **Shared decisions.** One Markdown file of rules you decided once, reread at every request and added to the prompt of every session, on every machine where the file is synced. A decision taken in one session reaches all the others. | (automatic, option `fichiers`) |
 
 ## Install
 
@@ -49,6 +51,14 @@ folder (`~`), nothing is tied to a machine.
 - **modes-reponse** — two flags kept per machine; while on, a short instruction is added to every message.
 - **vr** — the reminder (documentation before code, a picture as proof of a visual symptom, always leave Play mode
   after a test, one Operator per player) and the `multijoueur` skill.
+- **verification-avant-remontee** — the mod registers a `verificateur` agent (Read, Grep, Glob, Bash, WebFetch, read-only by
+  instruction) that the model itself cannot launch. At the end of a turn whose answer is long enough and contains a claim of
+  result, the mod spawns it on that answer. The verifier ends with `VERDICT-REMONTEE: OK` or `VERDICT-REMONTEE: CONTESTE` and
+  the disputed claims with what it saw; on a dispute the session gets one correction turn, which is not re-checked.
+  Something the verifier cannot check from where it runs (another machine, the user's screen) is not a dispute.
+- **decisions-communes** — option `fichiers` (default `~/.claude/decisions-communes.md`, several paths separated by `;`, the
+  first existing one wins). The file is not created by the mod: write it by hand or from a manager session, and sync it
+  however you like (git, Syncthing, a shared folder). Only the last 6,000 characters are kept, newest decisions at the bottom.
 
 ## Known limits
 
@@ -57,6 +67,7 @@ folder (`~`), nothing is tied to a machine.
 - Tests (`claude plugin test ./<mod>`, Claude Code 2.1.310): `debat`, `modes-reponse`, `taches-autonomes` and `vr` pass; `autotask` passes
   13 of 15 (the two failing tests, "stop criterion" and "STOP file", were written for Claude Code 2.1.295 and were not investigated further; the same two fail on the original code);
   `campagne` has no test.
+- Tests (Claude Code 2.1.319): `verification-avant-remontee` passes 5 of 5 and `decisions-communes` 3 of 3; both pass `claude plugin validate`.
 
 ## About the `vr` multiplayer skill and Meta's binaries
 

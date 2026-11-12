@@ -1,0 +1,17 @@
+{
+  "name": "decisions-communes",
+  "version": "0.2.0",
+  "description": "Adds to every session the decisions valid everywhere (one Markdown file shared between machines), reread at each request",
+  "author": {
+    "name": "Anthony Hunt"
+  },
+  "userConfig": {
+    "fichiers": {
+      "type": "string",
+      "title": "Shared decisions file",
+      "description": "Path of the Markdown file of shared decisions; several paths separated by « ; », the first one that exists is used. « ~ » = home folder.",
+      "default": "~/.claude/decisions-communes.md"
+    }
+  },
+  "license": "Apache-2.0"
+}

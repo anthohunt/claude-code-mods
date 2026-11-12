@@ -1,0 +1,9 @@
+{
+  "name": "verification-avant-remontee",
+  "version": "0.2.0",
+  "description": "When a session announces a result, a fresh read-only agent checks its claims; if it disputes one, the session is prompted to correct it",
+  "author": {
+    "name": "Anthony Hunt"
+  },
+  "license": "Apache-2.0"
+}
